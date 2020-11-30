@@ -4,6 +4,7 @@ import token.NumberToken;
 
 public class NumberState extends State {
     StringBuilder numberRepresentation;
+
     public NumberState(Tokenizer t, char c) {
         super(t);
         numberRepresentation = new StringBuilder();

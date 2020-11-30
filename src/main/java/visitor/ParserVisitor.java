@@ -23,16 +23,7 @@ public class ParserVisitor implements TokenVisitor {
         myTokens.clear();
         ops.clear();
         for (Token t : tokens) {
-            if (t instanceof Brace) {
-                visit((Brace) t);
-            }
-            if (
-                    t instanceof Operation) {
-                visit((Operation) t);
-            }
-            if (t instanceof NumberToken) {
-                visit((NumberToken) t);
-            }
+            t.accept(this);
         }
         reverse(ops);
         myTokens.addAll(ops);
