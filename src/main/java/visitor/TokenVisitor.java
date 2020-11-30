@@ -1,8 +1,11 @@
 package visitor;
 
-import token.Brace;
+import token.Token;
+import token.brace.Brace;
 import token.NumberToken;
-import token.Operation;
+import token.operation.Operation;
+
+import java.util.List;
 
 public interface TokenVisitor {
     void visit(NumberToken token);
