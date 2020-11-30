@@ -15,7 +15,7 @@ public class NumberState extends State {
             numberRepresentation.append(c);
         } else {
             addCurrToken();
-            t.setState(new UniversalState(t));
+            t.setState(new UniversalState(t, c));
         }
     }
 
