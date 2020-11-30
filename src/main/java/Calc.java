@@ -10,7 +10,7 @@ import java.util.List;
 public class Calc {
     public static void main(String[] args) {
         Tokenizer t = new Tokenizer();
-        List<Token> l = t.tokenize("(30 + 2) / (8 + 0)");
+        List<Token> l = t.tokenize("3 * (32 + 5) * (10 - 4 * 5)");
         ParserVisitor p = new ParserVisitor();
         PrintVisitor printVisitor = new PrintVisitor();
         printVisitor.visit(l, new PrintWriter(System.out));
