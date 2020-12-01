@@ -15,9 +15,11 @@ public class Calc {
         PrintVisitor printVisitor = new PrintVisitor();
         printVisitor.visit(l, new PrintWriter(System.out));
 
-        List<Token> ll = p.visit(l);
+        p.visit(l);
+        List<Token> ll = p.getRes();
         CalcVisitor cl = new CalcVisitor();
         printVisitor.visit(ll, new PrintWriter(System.out));
-        System.out.println(cl.visit(ll));
+        cl.visit(ll);
+        System.out.println(cl.getRes());
     }
 }

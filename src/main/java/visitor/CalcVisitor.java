@@ -12,12 +12,15 @@ public class CalcVisitor implements TokenVisitor {
 
     ArrayList<Integer> stack = new ArrayList<>();
 
-    public int visit(List<Token> tokens) {
+    public int getRes(){
+        return stack.get(stack.size() - 1);
+    }
+
+    public void visit(List<Token> tokens) {
         stack.clear();
         for (Token t : tokens) {
             t.accept(this);
         }
-        return stack.get(stack.size() - 1);
     }
 
     @Override

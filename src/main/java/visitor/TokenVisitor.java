@@ -11,4 +11,7 @@ public interface TokenVisitor {
     void visit(NumberToken token);
     void visit(Brace token);
     void visit(Operation token);
+    default void visit(List<Token> tokens) {
+
+    }
 }

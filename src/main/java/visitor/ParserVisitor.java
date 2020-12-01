@@ -18,8 +18,11 @@ public class ParserVisitor implements TokenVisitor {
     private List<Token> myTokens = new ArrayList<Token>();
     private List<Token> ops = new ArrayList<Token>();
 
+    public List<Token> getRes() {
+        return myTokens;
+    }
 
-    public List<Token> visit(List<Token> tokens) {
+    public void visit(List<Token> tokens) {
         myTokens.clear();
         ops.clear();
         for (Token t : tokens) {
@@ -27,7 +30,6 @@ public class ParserVisitor implements TokenVisitor {
         }
         reverse(ops);
         myTokens.addAll(ops);
-        return myTokens;
     }
 
     public void visit(NumberToken token) {
